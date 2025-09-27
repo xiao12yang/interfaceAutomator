@@ -19,7 +19,6 @@ def pytest_sessionstart(session):
 
 
 
-# @pytest.hookimpl(hookwrapper=True)
 def pytest_terminal_summary(terminalreporter,exitstatus,config):
     """
     Pytest框架里面预定义的钩子函数，用于在测试结束后自动化收集测试结果
