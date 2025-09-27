@@ -1,0 +1,2 @@
+1、yaml测试用例文件函数动态解析
+token: ${get_extract_data()}，在yaml被读取时去执行get_extract_data()函数，然后返回对应数据

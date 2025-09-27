@@ -1,0 +1,15 @@
+INFO     unit_tools.log_util.recordlog:conftest.py:5 ——————接口测试——————start
+INFO     unit_tools.log_util.recordlog:sendrequests.py:57 接口名称：删除用户
+INFO     unit_tools.log_util.recordlog:sendrequests.py:58 请求地址：http://127.0.0.1:8787/dar/user/deleteUser
+INFO     unit_tools.log_util.recordlog:sendrequests.py:59 请求方法：POST
+INFO     unit_tools.log_util.recordlog:sendrequests.py:60 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO     unit_tools.log_util.recordlog:sendrequests.py:61 用例名称：用户不存在删除校验
+INFO     unit_tools.log_util.recordlog:sendrequests.py:62 Cookies：None
+INFO     unit_tools.log_util.recordlog:sendrequests.py:63 files：None
+INFO     unit_tools.log_util.recordlog:sendrequests.py:68 参数类型：data
+INFO     unit_tools.log_util.recordlog:sendrequests.py:70 请求参数：{"user_id": 123456}
+INFO     unit_tools.log_util.recordlog:apiutils_single.py:135 实际接口返回结果{"msg":"删除失败，用户id不存在!","msg_code":9001}
+INFO     unit_tools.log_util.recordlog:assertion_utils.py:32 状态码断言成功：接口实际返回状态码：200 == 200
+INFO     unit_tools.log_util.recordlog:assertion_utils.py:57 包含模式断言成功：预期结果【删除失败】存在于实际结果【删除失败，用户id不存在!】中
+INFO     unit_tools.log_util.recordlog:assertion_utils.py:192 测试成功
+INFO     unit_tools.log_util.recordlog:conftest.py:7 ——————接口测试——————end

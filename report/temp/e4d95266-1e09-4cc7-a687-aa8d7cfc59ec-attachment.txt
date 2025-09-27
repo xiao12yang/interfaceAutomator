@@ -1,0 +1,17 @@
+INFO     unit_tools.log_util.recordlog:conftest.py:5 ——————接口测试——————start
+INFO     unit_tools.log_util.recordlog:sendrequests.py:57 接口名称：用户新增
+INFO     unit_tools.log_util.recordlog:sendrequests.py:58 请求地址：http://127.0.0.1:8787/dar/user/addUser
+INFO     unit_tools.log_util.recordlog:sendrequests.py:59 请求方法：POST
+INFO     unit_tools.log_util.recordlog:sendrequests.py:60 请求头：{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+INFO     unit_tools.log_util.recordlog:sendrequests.py:61 用例名称：新增用户正常校验
+INFO     unit_tools.log_util.recordlog:sendrequests.py:62 Cookies：None
+INFO     unit_tools.log_util.recordlog:sendrequests.py:63 files：None
+INFO     unit_tools.log_util.recordlog:sendrequests.py:68 参数类型：data
+INFO     unit_tools.log_util.recordlog:sendrequests.py:70 请求参数：{"username": "testadduser", "password": "tset6789890", "role_id": 123456789, "dates": "2025-09-28,", "phone": "13800000000,", "token": "f0F40Afc5efdDc54320aCEFEAcACA"}
+INFO     unit_tools.log_util.recordlog:apiutils_single.py:135 实际接口返回结果{"error_code":null,"msg":"新增成功","msg_code":200}
+INFO     unit_tools.log_util.recordlog:assertion_utils.py:32 状态码断言成功：接口实际返回状态码：200 == 200
+INFO     unit_tools.log_util.recordlog:assertion_utils.py:57 包含模式断言成功：预期结果【新增成功】存在于实际结果【新增成功】中
+INFO     unit_tools.log_util.recordlog:connectMysql.py:29 成功连接到数据库ip：localhost
+INFO     unit_tools.log_util.recordlog:assertion_utils.py:147 数据库断言成功，db_value:{'user_id': 1, 'email': '123456@qq.com', 'user_name': 'xiaoyang', 'password': 'xiaoyang', 'question': '', 'answer': '', 'sex': 0, 'birthday': '0000-00-00', 'user_money': Decimal('0.00'), 'frozen_money': Decimal('0.00'), 'pay_points': 0, 'rank_points': 0, 'address_id': 0, 'reg_time': 0, 'last_login': 0, 'last_time': '0000-00-00 00:00:00', 'last_ip': '', 'visit_count': 0, 'user_rank': 0, 'is_special': 0, 'ec_salt': None, 'salt': '0', 'parent_id': 0, 'flag': 0, 'alias': '', 'msn': '', 'qq': '', 'office_phone': '', 'home_phone': '', 'mobile_phone': '', 'is_validated': 0, 'credit_line': Decimal('0.00'), 'passwd_question': None, 'passwd_answer': None}
+INFO     unit_tools.log_util.recordlog:assertion_utils.py:192 测试成功
+INFO     unit_tools.log_util.recordlog:conftest.py:7 ——————接口测试——————end

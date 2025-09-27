@@ -1,0 +1,84 @@
+- baseInfo:
+    api_name: 获取商品列表
+    url: /coupApply/cms/goodsList
+    method: get
+    headers: ${get_headers(data)}
+  testCases:
+    - case_name: 获取商品列表校验
+      params:
+        msgType: getHandsetListOfCust
+        page: 1
+        size: 20
+      validation:
+        - code: 200
+        - eq: {'error_code':'0000'}
+      extract_list:
+        goods_ids: '"goodsId":"(.+?)"'
+
+- baseInfo:
+    api_name: 获取商品详情
+    url: /coupApply/cms/productDetail
+    method: post
+    headers: ${get_headers(json)}
+  testCases:
+    - case_name: 获取商品详情校验
+      json:
+        pro_id: ${get_extract_data(goods_ids,1)}
+        page: 1
+        size: 20
+      validation:
+        - eq: {'error_code':'0000'}
+        - code: 200
+- baseInfo:
+    api_name: 提交订单接口
+    url: /coupApply/cms/placeAnOrder
+    method: post
+    headers: ${get_headers(json)}
+  testCases:
+    - case_name: 提交订单接口校验
+      json:
+        goods_id: ${get_extract_data(goods_ids,1)}
+        number: 2
+        propertyChildIds: '2:9'
+        inviter_id: 127839112
+        price: '128'
+        freight_insurance: '0.00'
+        discount_code: '002399'
+        consignee_info:
+          name: 张三
+          phone: 13800000000
+          address: 北京市海淀区西三环北路74号院4栋3单元1008
+      validation:
+        - eq: {'error_code':'0000'}
+        - eq: {'message':'提交订单成功'}
+        - code: 200
+      extract:
+        orderNumber: '"orderNumber":"(.+?)"'
+        userId: '"userId":"(.+?)"'
+- baseInfo:
+    api_name: 订单支付
+    url: /coupApply/cms/orderPay
+    method: post
+    headers: ${get_headers(json)}
+  testCases:
+    - case_name: 订单支付校验
+      json:
+        orderNumber: ${get_extract_data(orderNumber)}
+        userId: ${get_extract_data(userId)}
+      validation:
+        - eq: { 'error_code': '0000' }
+        - eq: {'message':'订单支付成功'}
+- baseInfo:
+    api_name: 校验商品订单状态
+    url: /coupApply/cms/checkOrderStatus
+    method: post
+    headers: ${get_headers(json)}
+  testCases:
+    - case_name: 校验商品订单状态
+      json:
+        orderNumber: ${get_extract_data(orderNumber)}
+        timeStamp: 2
+      validation:
+        - eq: {"translate_language": "zh-CN"}
+        - eq: {"status": "0"}
+

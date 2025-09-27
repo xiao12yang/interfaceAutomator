@@ -1,0 +1,10 @@
+- baseInfo:
+    api_name: 文件上传
+    url: /dar/user/upload
+    method: post
+  testCases:
+    - case_name: 文件正常上传
+      files:
+        file: ./data/login.yaml
+      validation:
+        - code: 200

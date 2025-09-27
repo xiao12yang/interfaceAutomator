@@ -1,0 +1,43 @@
+1、yaml简介
+yaml是一种简介的非标记语言，yaml是以数据为中心，使用空白、缩进、分行组织数据，从而使得数据更加简洁易读。
+
+2、yaml安装
+pip install pyyaml
+
+3、格式区分
+json格式：
+{
+  "name": "zhangsan",
+  "age": 25,
+  "girlfriend": {
+    "name": "Lisi",
+    "age": 22
+  },
+  "children": [
+    {
+      "name": "Wangwu",
+      "age": 2
+    },
+    {
+      "name": "Zhaoliu",
+      "age": 1
+    }
+  ]
+}
+yaml格式：(注意键值中间必须要有空格，否则报错，且大小写敏感)
+name: "Zhangsan"
+age: 25
+spouse:
+  name: "Lisi"
+  age: 20
+children:
+  - name: "Wangwu"
+    age: 1
+  - name: "Zhaoliu"
+    age: 2
+
+语法特点：
+1、大小写敏感
+2、键值之间有一个空格缩进
+3、缩进时不允许使用tab键，只允许空格
+4、

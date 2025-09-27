@@ -1,0 +1,25 @@
+- baseInfo:
+    api_name: 删除用户
+    url: /dar/user/deleteUser
+    method: post
+    headers:
+      ${get_headers(data)}
+  testCases:
+    - case_name: 删除用户正常校验
+      data:
+        user_id: 123839387391912
+      validation:
+        - code: 200
+        - contain: {'msg':'删除成功'}
+    - case_name: 用户不存在删除校验
+      data:
+        user_id: 123456
+      validation:
+        - code: 200
+        - contain: {'msg':'删除失败'}
+    - case_name: 用户id为空删除校验
+      data:
+        user_id:
+      validation:
+        - code: 200
+        - contain: {'msg':'删除失败'}

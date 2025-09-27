@@ -1,0 +1,16 @@
+- baseInfo:
+    api_name: 修改用户
+    url: /dar/user/updateUser
+    method: post
+#    headers:
+#      ${get_headers(data)}
+  testCases:
+    - case_name: 修改用户正确校验
+      data:
+        username: testadduser
+        password: tset6789#$123
+        role_id: 89588181111112343
+        dates: '2023-12-31'
+        phone: 13800000000
+      validation:
+        - contain: {'msg':'更新成功'}

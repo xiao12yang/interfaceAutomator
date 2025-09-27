@@ -1,0 +1,28 @@
+ERROR - 2025-09-28 02:21:41,754 - yaml_handler.py:91 - [yaml_handler:get_extract_yaml] - 未知异常，原因：'cookies'
+ERROR - 2025-09-28 02:21:41,755 - yaml_handler.py:91 - [yaml_handler:get_extract_yaml] - 未知异常，原因：'cookies'
+ERROR - 2025-09-28 02:21:41,764 - assertion_utils.py:92 - [assertion_utils:equal_assert] - 相等模式断言失败，预期结果【message:操作成功】不存在于实际结果中，请检查预期结果或接口返回值是否正确
+ERROR - 2025-09-28 02:21:41,766 - assertion_utils.py:194 - [assertion_utils:assert_result] - 测试失败
+ERROR - 2025-09-28 02:21:41,767 - apiutils_single.py:146 - [apiutils_single:execute_test_case] - 出现未知异常 -- Traceback (most recent call last):
+  File "C:\dol\python\interfaceAutomator\unit_tools\apiutils_single.py", line 144, in execute_test_case
+    self.asserts.assert_result(validation,response.json(),status_code)
+  File "C:\dol\python\interfaceAutomator\unit_tools\assertion_utils.py", line 195, in assert_result
+    raise e
+  File "C:\dol\python\interfaceAutomator\unit_tools\assertion_utils.py", line 191, in assert_result
+    assert all_flag == 0, '测试失败'
+           ^^^^^^^^^^^^^
+AssertionError: 测试失败
+
+ERROR - 2025-09-28 02:22:28,657 - yaml_handler.py:91 - [yaml_handler:get_extract_yaml] - 未知异常，原因：'cookies'
+ERROR - 2025-09-28 02:22:28,658 - yaml_handler.py:91 - [yaml_handler:get_extract_yaml] - 未知异常，原因：'cookies'
+ERROR - 2025-09-28 02:22:28,665 - assertion_utils.py:92 - [assertion_utils:equal_assert] - 相等模式断言失败，预期结果【message:操作成功】不存在于实际结果中，请检查预期结果或接口返回值是否正确
+ERROR - 2025-09-28 02:22:28,667 - assertion_utils.py:194 - [assertion_utils:assert_result] - 测试失败
+ERROR - 2025-09-28 02:22:28,668 - apiutils_single.py:146 - [apiutils_single:execute_test_case] - 出现未知异常 -- Traceback (most recent call last):
+  File "C:\dol\python\interfaceAutomator\unit_tools\apiutils_single.py", line 144, in execute_test_case
+    self.asserts.assert_result(validation,response.json(),status_code)
+  File "C:\dol\python\interfaceAutomator\unit_tools\assertion_utils.py", line 195, in assert_result
+    raise e
+  File "C:\dol\python\interfaceAutomator\unit_tools\assertion_utils.py", line 191, in assert_result
+    assert all_flag == 0, '测试失败'
+           ^^^^^^^^^^^^^
+AssertionError: 测试失败
+

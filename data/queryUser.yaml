@@ -1,0 +1,22 @@
+- baseInfo:
+    api_name: 查询用户
+    url: /dar/user/queryUser
+    method: post
+    headers:
+      ${get_headers(data)}
+  testCases:
+    - case_name: 查询用户正常校验
+      data:
+        user_id: 123839387391912
+      validation:
+        - contain: {'msg':'查询成功'}
+    - case_name: 用户id不存在查询校验
+      data:
+        user_id: 123456
+      validation:
+          - contain: {'msg':'查询失败'}
+    - case_name: 用户id为空查询校验
+      data:
+        user_id:
+      validation:
+        - contain: { 'msg': '查询失败' }

@@ -1,0 +1,44 @@
+格式约定：
+    · yaml文件必须包含baseInfo和testCase
+    · baseInfo包含下面关键词
+        api_name：接口名称
+        url：接口地址
+        method：请求方式
+        header(可选)：请求头，根据接口决定
+        cookie(可选)：cookie根据实际项目情况决定
+    · testCase包含下面关键词，最外层 - 为列表类型
+        case_name：用例名称
+        data/params/json（可选）（一般get选params，post根据请求头选择data/json）：请求参数
+        files:（可选）
+          file: 文件路径
+        validation：断言结果，有多种断言模式，如contain、eq、nq、db
+        extract（可选）：接口返回值提取，如token，存放在extract.yaml文件给其他接口使用，达到接口的上下游参数传递的目的
+        extract_list（可选）：提取多个值
+
+
+        """
+        - baseInfo:
+            api_name: 用户登录
+            url: /dar/user/login
+            method: post
+            headers:
+              Content-Type: application/x-www-form-urlencoded;charset=UTF-8
+            cookies:
+              Cookie: 122222225546
+          testCases:
+            - case_name: 用户正常登录校验
+              data:
+                user_name: test01
+                passwd: admin123
+              files:
+                file: ./data/login.yaml
+              validation:
+                - contain: {'msg':'登录成功'}
+                - eq: {'msg':'登录成功'}
+              extract:
+                token: $.token
+              extract_list:
+                goodId: $.good_id
+        """
+
+

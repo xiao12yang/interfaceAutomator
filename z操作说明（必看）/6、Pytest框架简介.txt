@@ -1,0 +1,212 @@
+1、Pytest简介
+pytest是一个流行的测试框架，广泛用于单元测试、集成测试和功能测试。具有简单、灵活、可扩展的特点，提供丰富的功能和插件生态系统，简化了测试的编写和组织。
+
+2、安装
+pip install pytest
+
+3、pytest编写规则
+    1）测试文件以test_开头或者以_test结尾
+    2）测试类以Test开头，并且类里面不能带有__init__初始化构造函数，否则会警告：PytestCollectionWarning: cannot collect test class 'TestLogin' because it has a __init__ constructor (from: testcases/login/test_login.py)
+    3）测试函数以test_开头
+    4）断言使用基本的assert
+
+4、pytest的运行方式
+    1）命令行运行方式
+        · 控制台直接输入"pytest"，它将自动查找并执行当前目录及子目录中的所有以test_开头测试用例文件
+            """pytest"""
+        · 运行指定目录的测试用例
+            """pytest .\testcases\userManager"""
+        · 运行指定文件的测试用例
+            """pytest .\testcases\userManager\test_addUser.py"""
+        · 使用'-k'参数并提供测试用例或测试目录名称，可以匹配对应名称的测试用例文件
+            · 指定目录:"""pytest -k userManager"""
+            · 指定测试文件:"""pytest -k test_addUser.py"""
+        · 使用'-s'参数可以实现测试用例调试信息的输出，使用'-v'参数可以实现更详细的执行信息，一般情况下都是'-sv'组合使用
+            """pytest -s -k userManager"""
+            """pytest -v -k userManager"""
+            """pytest -sv -k userManager"""
+        · 安装pytest—xdist前提下，使用'-n'参数可以实现多线程同时执行测试用例
+            """pytest -n 3"""
+    2）主函数方法执行
+        · 主函数运行，用于执行pytest测试，它可以通过传递命令行参数来配置和控制测试用例
+            """
+            if __name__ == '__main__':
+                pytest.main(["-s","-v","-k","userManager"])
+            """
+
+5、通过读取pytest框架的配置文件--pytest.ini（企业自动化推荐的用法）
+"pytest.ini"文件是Pytest测试框架的配置文件，运行设置各种配置选项——自定义测试运行的行为，一般是在项目的根目录下创建'pytest.ini'，文件名固定不能修改，
+pytest将在运行测试时读取该文件并应用其中的配置
+    · 以[pytest]开头
+    · 配置文件参数
+        · addopts：用于在运行测试时传递额外的命令行选项
+            """addopts = -s -v -k userManager"""
+        · testpaths：用于指定pytest在哪些目录中查找测试文件，运行定义一个或多个目录，告诉pytest在这些目录下查找测试文件
+            """testpaths = ./testcases/userManager"""
+        · python_files：用于指定测试文件的命名匹配模式，默认"test_"开头或"_test"结尾
+            """
+            python_files = ctest_*.py
+            被修改成以ctest_开头的测试文件才能匹配
+            """
+        · python_classes：用于指定测试文件中类的命名匹配模式，默认"Test"开头
+            """python_classes = Test*"""
+        · python_functions：用于指定测试文件中函数的命名匹配模式，默认"test_"开头
+            """python_functions = test_*"""
+        · markers:用于注册自定义标记
+            """
+            markers =
+                last
+                second
+                first
+            """
+6、pytest丰富的插件系统
+    1）并发执行（多线程/多进程）
+    pytest提供一个插件——pytest_xdist提供一个-n选项设置多进程/多线程数量，使测试用例可以在多个进程环境下并发执行，实现在执行多个测试文件时，提高测试效率。
+        · 安装插件
+            """pip install pytest-xdist"""
+        · 使用
+            """pytest -k test_login -n 线程数量"""
+
+    2）失败测试用例重跑
+    在做测试自动化测试时执行测试用例时，遇到网络波动或其他不确定因素导致测试用例运行失败，或许并不是测试失败，这是需要用到失败重试运行
+        · 安装插件
+            """pip install pytest-rerunfailures"""
+        · 使用
+            单个测试用例重跑设置
+            """@pytest.mark.flaky(reruns=3, reruns_delay=2)"""
+            全局测试用例重跑设置，在pytest.ini中设置，因为rerun时命令行
+            """
+            reruns = 3
+            reruns_delay = 2
+            """
+    3）测试用例执行顺序
+    因为在默认情况下，pytest会以特定的顺序执行测试用例，可以使用pytest-ordering插件去自定义设置测试用例执行顺序
+        · 安装
+        """pip install pytest-ordering"""
+        · 使用
+        单个测试用例执行顺序
+        """@pytest.mark.run(order=3)"""
+        使用标记对单个测试用例进行标记，但需要在pytest.ini中注册才能使用
+        """@pytest.mark.last"""
+        """@pytest.mark.first"""
+
+7、断言
+pytest框架使用python的内置断言assert语句来进行测试，除了基本的assert语句，pytest还提供了一些丰富的断言工具
+    1）相等断言，判断两个值是否相等
+    """assert 实际结果 == 预期结果,断言失败消息"""
+    """assert 1 == 2 , '断言失败：1不等于2!'"""
+    2）真假断言
+    """assert 布尔值,'断言失败消息'"""
+    3）成员关系断言，包含关系
+    """assert str in String,'断言失败消息'"""
+
+8、参数化处理
+1）分组执行
+在pytest中，可以使用标记（mark）或者参数化来实现测试用例的分组执行，分组执行是一种将测试用例按照特定的标记或者条件进行组织和运行的方法。
+    · 使用 -m 去执行分组的测试用例，标记需要先注册
+        · 单组执行
+        """pytest -m '标记名'"""
+        · 多组执行,-m是去查找标记名
+        """pytest -m '标记名1 or 标记名2'"""
+        · pytest.ini配置
+        """addopts = -s -v -n 1 -m 'P1 or P3'"""
+
+2）跳过执行
+在pytest中，可以使用@pytest.mark.skip装饰器、@pytest.mark.skipif装饰器、@pytest.mark.xfail装饰器来跳过测试用例的执行。
+    · @pytest.mark.skip：无条件跳过测试用例执行
+    · @pytest.mark.skipif(condition=条件,reason=原因)：有条件跳过测试用例执行
+    · @pytest.mark.xfail：用于标记测试用例为预期失败，当测试用例执行不会视为失败，而是预期失败
+
+
+9、参数化处理
+在pytest中，参数化是一种将相同的测试用例以不同的参数运行多次的机制，这可以帮助简化测试代码，使其更灵活和易维护，达到覆盖不同的测试场景。
+它通过@pytest.mark.parametrize装饰器去实现参数化
+    · 基本使用
+    使用@pytest.mark.parametrize("param_name1,param_name2,...",[(value1,value2,...),(value1,value2,...),...])
+    测试用例接收的参数必须以第一个parametrize参数保持一致，def test_name(self,param_name1,param_name2,...)
+    每一个param_name对应列表元素的第一个子元素
+    """
+    @pytest.mark.parametrize("user",[
+        {'username':'123456','password':'abcdef'},
+        {'username':'123458','password':'123456'},
+        {'username':'1234561','password':'abcdef'}
+    ])
+    def test_login_001(self,user):
+        assert user.get("username") == '123456','执行失败，用户名不正确'
+    """
+    !!!注意：在@pytest.mark.parametrize中使用函数通过路径读取文件数据使用的路径是在当前目录开始的，因为创建了run.py，所以是以run.py文件路径为起点
+
+10、前后置处理（setup_method/teardown_method/setup_class/teardown_class、Fixture）
+前后置是值在执行测试用例前和执行测试用例后执行一些额外的操作，这些操作可以用于初始化测试环境、准备测试数据，以确保测试的可靠性和一致性。
+pytest框架提供三种方式做测试用例的前后置操作
+    1)setup_method、teardown_method/setup_class、teardown_class
+        · 函数级别前后置，在每个测试函数开始和结束时执行，用于函数级别初始化和清理。
+        """
+        def setup_method(self):
+            print("所有测试执行前执行的操作")
+
+        def teardown_method(self):
+            print("所有测试执行后执行的操作")
+        """
+        · 类级别前后置，在每个测试类开始和结束时执行，用于类级别的初始化和清理
+        """
+        @classmethod
+        def setup_class(cls):
+            print('测试类开始前执行的操作')
+
+        @classmethod
+        def teardown_class(cls):
+            print("测试类结束后执行的操作")
+        """
+    2）Fixture
+    通过装饰器@pytest.fixture来实现pytest前后置应用。
+    在pytest框架中用于定义和使用fixture（装置）的装饰器，fixture可以用于在测试函数执行前后进行一些初始化和清理操作，以及共享状态和资源
+        · 定义fixture：使用@pytest.fixture装饰器定义一个fixture函数，fixture函数可以包含初始化等逻辑
+        """
+        不带参数
+        @pytest.fixture
+        def setup_and_teardown():
+            print('测试函数执行前执行的前置操作')
+            yield
+            print('测试函数执行后执行的后置操作')
+        """
+        · fixture的携带参数
+            scope：控制fixture的作用范围，可选值有function（函数级别）、class（类级别）、module（模块.py级别）、session（会话级别），选择其中一个
+            autouse：用于指定是否自动应用夹具，而无需在测试函数中显示的调用，默认为False
+            params：用于参数化的一个选项，运行为fixture定义多个参数值，以便在测试函数中使用不同的参数组合运行，params有多少个数据测试用例就会执行多少次，通过request.param可以调用参数
+            ids：为参数化的fixture提供自定义标识，用于在测试报告中更加清晰显示参数，需要配合params参数结合使用，用来给params的每个参数设置id
+            name：给fixture重新定义名称，使用fixture时需要使用新名称
+        """
+            @pytest.fixture(scope='function',autouse=True,params=['广东','广西'],name='setValue',ids=['GD','GX'])
+            def set_params(request):
+                return request.param
+            def test_case_001(self,setValue):
+                print(f'这是第一个测试用例，夹具返回值 --- {setValue}')
+        """
+
+        · 使用fixture：使用测试函数的参数来接收fixture的返回值，这样测试函数就可以在执行前后使用fixture提供的资源和状态
+        """
+        def test_case_001(self,setup_and_teardown):
+            print(f'这是第一个测试用例，夹具返回值 --- {setup_and_teardown}')
+        """
+        · 执行顺序：pytest会自动监测测试用例中的参数，如果发现参数的名称与fixture的名称匹配，就会将fixture注入的到测试函数中，执行顺序为先执行fixture的前置应用代码，
+        然后在执行测试用例函数，最后执行fixture后置应用代码，通过生成器yield可以返回一个值，类似return。
+
+    3）通过使用@pytest.fixture和conftest.py结合使用实现全局的前后置配置
+    可以实现在多个测试模块（.py）中共享前后置应用操作，这种结合方式使得可以在整个测试项目中定义和维护通用的前后置逻辑，使测试代码更加模块化和可维护。
+    规则:
+        · conftest.py是一个单独存放的fixture配置文件，名称固定不能更改。
+        · 可以在项目中的不同目录创建多个conftest.py，每个conftest.py文件都会对其所在目录及其子目录下的测试模块生效
+        · 在不同模块的测试中，需要用到conftest.py的前后置功能时，不需要做任何的导入操作，可以直接在测试函数的参数中使用fixture名称
+        · 作用：可以在不同的.py环境中使用同一个fixture函数
+    使用：
+    """
+    import pytest
+    @pytest.fixture(scope="function", autouse=True)
+    def setup_and_teardown():
+        print('测试函数执行前执行的前置操作')
+        yield
+        print('测试函数执行后执行的后置操作')
+    """
+
+11、pytest框架的钩子函数

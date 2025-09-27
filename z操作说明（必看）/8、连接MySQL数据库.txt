@@ -1,0 +1,5 @@
+1、使用pymysql库去操作数据库
+    · 安装
+    """
+    pip install pymysql
+    """

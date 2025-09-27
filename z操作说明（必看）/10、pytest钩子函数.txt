@@ -1,0 +1,30 @@
+1、什么是钩子函数
+在Pytest框架中，钩子函数是一种运行用户扩展或自定义测试执行过程的机制。钩子函数运行用户在测试的不同截断插入自定义代码，以实现特定的行为、操作、处理。
+Pytest的钩子函数遵循一定的命名规则，通常以"pytest_"为前缀。用户可以在测试代码中定义这些函数，Pytest会在特定的时机调用它们。
+以下是一些常用的Pytest钩子函数：
+    1）pytest_configure(config)
+    在配置截断调用，用于设置全局配置，可以配置插件、自定义命令行选项等
+    2）pytest_collection_modifyitems(config,items)
+    在收集测试用例阶段调用，允许修改、过滤或重新排序测试用例
+    3）pytest_runtest_protocol(item,nextitem)
+    在测试用例执行的不同阶段调用，用于在测试前后执行特定操作
+    4）
+    5）
+
+    6）pytest_runtest_makereport(item,call,report):
+    在每个测试用例结束后调用，允许自定义测试报告。一般在conftest.py中使用
+    """
+    # 钩子函数，对失败测试用例进行截图
+    @pytest.hookimpl(hookwrapper=True)
+    def pytest_runtest_makereport():
+        coucome = yield
+        result = coucome.get_result()
+        if result.when == 'call':
+            xfail = hasattr(result, 'wasxfail')
+            if(result.skipped and xfail) or (result.failed and not xfail):
+                with allure.step('测试用例失败截图'):
+                    allure.attach(driver.get_screenshot_as_png(),'失败截图',attachment_type=allure.attachment_type.PNG)
+    """
+
+    7）pytest_terminal_summary()
+

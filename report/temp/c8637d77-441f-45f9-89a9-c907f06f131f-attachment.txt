@@ -1,0 +1,14 @@
+INFO     unit_tools.log_util.recordlog:conftest.py:5 ——————接口测试——————start
+INFO     unit_tools.log_util.recordlog:sendrequests.py:57 接口名称：修改用户
+INFO     unit_tools.log_util.recordlog:sendrequests.py:58 请求地址：http://127.0.0.1:8787/dar/user/updateUser
+INFO     unit_tools.log_util.recordlog:sendrequests.py:59 请求方法：POST
+INFO     unit_tools.log_util.recordlog:sendrequests.py:60 请求头：None
+INFO     unit_tools.log_util.recordlog:sendrequests.py:61 用例名称：修改用户正确校验
+INFO     unit_tools.log_util.recordlog:sendrequests.py:62 Cookies：None
+INFO     unit_tools.log_util.recordlog:sendrequests.py:63 files：None
+INFO     unit_tools.log_util.recordlog:sendrequests.py:68 参数类型：data
+INFO     unit_tools.log_util.recordlog:sendrequests.py:70 请求参数：{"username": "testadduser", "password": "tset6789#$123", "role_id": 89588181111112343, "dates": "2023-12-31", "phone": 13800000000}
+INFO     unit_tools.log_util.recordlog:apiutils_single.py:135 实际接口返回结果{"error_code":null,"msg":"更新成功","msg_code":200}
+INFO     unit_tools.log_util.recordlog:assertion_utils.py:57 包含模式断言成功：预期结果【更新成功】存在于实际结果【更新成功】中
+INFO     unit_tools.log_util.recordlog:assertion_utils.py:192 测试成功
+INFO     unit_tools.log_util.recordlog:conftest.py:7 ——————接口测试——————end

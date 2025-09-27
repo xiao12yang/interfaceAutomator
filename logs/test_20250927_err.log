@@ -1,0 +1,56 @@
+ERROR - 2025-09-27 19:16:39,287 - yaml_handler.py:91 - [yaml_handler:get_extract_yaml] - 未知异常，原因：'cookies'
+ERROR - 2025-09-27 19:16:39,288 - yaml_handler.py:91 - [yaml_handler:get_extract_yaml] - 未知异常，原因：'cookies'
+ERROR - 2025-09-27 19:16:39,294 - assertion_utils.py:92 - [assertion_utils:equal_assert] - 相等模式断言失败，预期结果【message:操作成功】不存在于实际结果中，请检查预期结果或接口返回值是否正确
+ERROR - 2025-09-27 19:16:39,295 - assertion_utils.py:194 - [assertion_utils:assert_result] - 测试失败
+ERROR - 2025-09-27 19:16:39,296 - apiutils_single.py:146 - [apiutils_single:execute_test_case] - 出现未知异常 -- Traceback (most recent call last):
+  File "C:\dol\python\interfaceAuto\unit_tools\apiutils_single.py", line 144, in execute_test_case
+    self.asserts.assert_result(validation,response.json(),status_code)
+  File "C:\dol\python\interfaceAuto\unit_tools\assertion_utils.py", line 195, in assert_result
+    raise e
+  File "C:\dol\python\interfaceAuto\unit_tools\assertion_utils.py", line 191, in assert_result
+    assert all_flag == 0, '测试失败'
+           ^^^^^^^^^^^^^
+AssertionError: 测试失败
+
+ERROR - 2025-09-27 19:16:41,391 - yaml_handler.py:91 - [yaml_handler:get_extract_yaml] - 未知异常，原因：'cookies'
+ERROR - 2025-09-27 19:16:41,391 - yaml_handler.py:91 - [yaml_handler:get_extract_yaml] - 未知异常，原因：'cookies'
+ERROR - 2025-09-27 19:16:41,398 - assertion_utils.py:92 - [assertion_utils:equal_assert] - 相等模式断言失败，预期结果【message:操作成功】不存在于实际结果中，请检查预期结果或接口返回值是否正确
+ERROR - 2025-09-27 19:16:41,399 - assertion_utils.py:194 - [assertion_utils:assert_result] - 测试失败
+ERROR - 2025-09-27 19:16:41,399 - apiutils_single.py:146 - [apiutils_single:execute_test_case] - 出现未知异常 -- Traceback (most recent call last):
+  File "C:\dol\python\interfaceAuto\unit_tools\apiutils_single.py", line 144, in execute_test_case
+    self.asserts.assert_result(validation,response.json(),status_code)
+  File "C:\dol\python\interfaceAuto\unit_tools\assertion_utils.py", line 195, in assert_result
+    raise e
+  File "C:\dol\python\interfaceAuto\unit_tools\assertion_utils.py", line 191, in assert_result
+    assert all_flag == 0, '测试失败'
+           ^^^^^^^^^^^^^
+AssertionError: 测试失败
+
+ERROR - 2025-09-27 19:16:43,422 - yaml_handler.py:91 - [yaml_handler:get_extract_yaml] - 未知异常，原因：'cookies'
+ERROR - 2025-09-27 19:16:43,423 - yaml_handler.py:91 - [yaml_handler:get_extract_yaml] - 未知异常，原因：'cookies'
+ERROR - 2025-09-27 19:16:43,429 - assertion_utils.py:92 - [assertion_utils:equal_assert] - 相等模式断言失败，预期结果【message:操作成功】不存在于实际结果中，请检查预期结果或接口返回值是否正确
+ERROR - 2025-09-27 19:16:43,430 - assertion_utils.py:194 - [assertion_utils:assert_result] - 测试失败
+ERROR - 2025-09-27 19:16:43,430 - apiutils_single.py:146 - [apiutils_single:execute_test_case] - 出现未知异常 -- Traceback (most recent call last):
+  File "C:\dol\python\interfaceAuto\unit_tools\apiutils_single.py", line 144, in execute_test_case
+    self.asserts.assert_result(validation,response.json(),status_code)
+  File "C:\dol\python\interfaceAuto\unit_tools\assertion_utils.py", line 195, in assert_result
+    raise e
+  File "C:\dol\python\interfaceAuto\unit_tools\assertion_utils.py", line 191, in assert_result
+    assert all_flag == 0, '测试失败'
+           ^^^^^^^^^^^^^
+AssertionError: 测试失败
+
+ERROR - 2025-09-27 19:16:45,449 - yaml_handler.py:91 - [yaml_handler:get_extract_yaml] - 未知异常，原因：'cookies'
+ERROR - 2025-09-27 19:16:45,450 - yaml_handler.py:91 - [yaml_handler:get_extract_yaml] - 未知异常，原因：'cookies'
+ERROR - 2025-09-27 19:16:45,473 - assertion_utils.py:92 - [assertion_utils:equal_assert] - 相等模式断言失败，预期结果【message:操作成功】不存在于实际结果中，请检查预期结果或接口返回值是否正确
+ERROR - 2025-09-27 19:16:45,474 - assertion_utils.py:194 - [assertion_utils:assert_result] - 测试失败
+ERROR - 2025-09-27 19:16:45,474 - apiutils_single.py:146 - [apiutils_single:execute_test_case] - 出现未知异常 -- Traceback (most recent call last):
+  File "C:\dol\python\interfaceAuto\unit_tools\apiutils_single.py", line 144, in execute_test_case
+    self.asserts.assert_result(validation,response.json(),status_code)
+  File "C:\dol\python\interfaceAuto\unit_tools\assertion_utils.py", line 195, in assert_result
+    raise e
+  File "C:\dol\python\interfaceAuto\unit_tools\assertion_utils.py", line 191, in assert_result
+    assert all_flag == 0, '测试失败'
+           ^^^^^^^^^^^^^
+AssertionError: 测试失败
+

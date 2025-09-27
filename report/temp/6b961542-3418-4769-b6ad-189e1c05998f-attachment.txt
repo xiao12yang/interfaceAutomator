@@ -1,0 +1,26 @@
+INFO     unit_tools.log_util.recordlog:conftest.py:5 ——————接口测试——————start
+ERROR    unit_tools.log_util.recordlog:yaml_handler.py:91 未知异常，原因：'cookies'
+ERROR    unit_tools.log_util.recordlog:yaml_handler.py:91 未知异常，原因：'cookies'
+INFO     unit_tools.log_util.recordlog:sendrequests.py:57 接口名称：货主下订单
+INFO     unit_tools.log_util.recordlog:sendrequests.py:58 请求地址：http://127.0.0.1:8787/api/order/customer/orderPlan/create
+INFO     unit_tools.log_util.recordlog:sendrequests.py:59 请求方法：POST
+INFO     unit_tools.log_util.recordlog:sendrequests.py:60 请求头：{'Content-Type': 'application/json;charset=UTF-8'}
+INFO     unit_tools.log_util.recordlog:sendrequests.py:61 用例名称：货主下订单成功
+INFO     unit_tools.log_util.recordlog:sendrequests.py:62 Cookies：None
+INFO     unit_tools.log_util.recordlog:sendrequests.py:63 files：None
+INFO     unit_tools.log_util.recordlog:sendrequests.py:68 参数类型：json
+INFO     unit_tools.log_util.recordlog:sendrequests.py:70 请求参数：{"orderInfo": {"template": "define", "urgentType": 2, "cusName": "总仓", "orderType": 1, "charter": 2, "planType": 1, "transStartTime": "2023-07-14 10:37:02", "transEndTime": "2023-07-16 10:38:58", "orderMark": "货主下单", "cusId": "1661242770195464193"}, "orderCapacityList": [{"materialCategoryId": "1676511586856882178", "materialCategory": "粮食", "materialName": "小麦", "materialUnit": "KG", "materialUnitId": "1660891402561581058", "settlementUnit": "KG", "syncMaterialId": "4", "billingWeightCoe": null, "billingVolumeCoe": null, "sendWeightCoe": null, "sendVolumeCoe": null, "materialSpecList": null, "materialId": "1661349087048306690", "sendCusId": "1661663745663741954", "sendCusName": "码头尖庄仓", "receiveCusId": "1661624733406285825", "receiveCusName": "502 车间", "sendAdrId": "1674617286107828226", "sendAdrName": "长宁县五谷粮食购销有限责任公司", "sendPoiId": "1674615819826425857", "sendAdrDetail": null, "receiveAdrId": "1674208708683337730", "receiveAdrName": "五区一区", "receivePoiId": "1674208399908237313", "receiveAdrDetail": "五区一区", "materialSpecId": "1661349088147214337", "specName": "1", "materialNum": 100, "materialSpecUnit": "KG", "remark": "原粮"}], "orderVehicleList": [], "orderBoxList": []}
+INFO     unit_tools.log_util.recordlog:apiutils_single.py:135 实际接口返回结果{"msg":"未携带cookie信息"}
+ERROR    unit_tools.log_util.recordlog:assertion_utils.py:92 相等模式断言失败，预期结果【message:操作成功】不存在于实际结果中，请检查预期结果或接口返回值是否正确
+INFO     unit_tools.log_util.recordlog:assertion_utils.py:32 状态码断言成功：接口实际返回状态码：200 == 200
+ERROR    unit_tools.log_util.recordlog:assertion_utils.py:194 测试失败
+ERROR    unit_tools.log_util.recordlog:apiutils_single.py:146 出现未知异常 -- Traceback (most recent call last):
+  File "C:\dol\python\interfaceAutomator\unit_tools\apiutils_single.py", line 144, in execute_test_case
+    self.asserts.assert_result(validation,response.json(),status_code)
+  File "C:\dol\python\interfaceAutomator\unit_tools\assertion_utils.py", line 195, in assert_result
+    raise e
+  File "C:\dol\python\interfaceAutomator\unit_tools\assertion_utils.py", line 191, in assert_result
+    assert all_flag == 0, '测试失败'
+           ^^^^^^^^^^^^^
+AssertionError: 测试失败
+INFO     unit_tools.log_util.recordlog:conftest.py:7 ——————接口测试——————end

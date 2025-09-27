@@ -1,0 +1,108 @@
+1、安装allure前提是先安装jdk，配置到系统环境
+
+2、安装allure，在github上面搜索allure，然后下载，解压后复制到python安装目录Lib\site-packages下
+
+3、安装allure-pytest：
+    """
+    pip install allure-pytest
+    """
+
+4、使用：在pytest.ini中添加配置
+    """
+    addopts = -s -v --alluredir=./report/temp --clean-alluredir
+    """
+
+5、allure报告通过在测试代码中使用一些注解（annotaions）和API函数来生成丰富的报告
+    1）注解方式
+        · @allure.feature("")：这是定义测试用例所属的功能特性（模块），比如可以在类方法上面使用
+            """
+            @allure.feature("登录模块")
+            """
+        · @allure.story：定义测试用例所属的用户故事（故事即敏捷开发中描述功能的简洁方式），可以在测试函数方法上使用
+            """
+            @allure.story('登录成功')
+            """
+        · @allure.title：定义测试用例标题
+            """
+            @allure.title('用户登录成功')
+            """
+        · @allure.description：定义测试用例描述信息
+            """
+            @allure.description('这是一个测试用例的描述信息')
+            """
+        · @allure.issue和@allure.link：定义测试用例相关的问题和链接
+            """
+            @allure.issue(url='缺陷管理系统链接')
+            """
+            """
+            @allure.link(url='公司的缺陷管理系统链接')
+            """
+        · @allure.step:定义测试用例的步骤，可以在步骤中添加日志信息
+            """
+            @allure.step('读取yaml文件，发送requests请求，对比返回结果')
+            """
+    2）API函数
+        · allure.attach(body,name=None,attachment_type=None)：在报告中附加额外的信息，如文本、图片、文件。
+            body:字符串类型 name:标题 attachment_type:要显示什么类型的附件信息
+            """
+            allure.attach('查询用户',name='查询',attachment_type=allure.attachment_type.TEXT)
+            """
+        · allure.dynamic.link:动态生成链接
+            """
+
+            """
+        · allure.dynamic.title:动态生成标题，可以通过从yaml文件中获取接口名称而不需要通过@allure.title方式写死标题
+            """
+            allure.dynamic.title(api_info['baseInfo']['api_name'])
+            """
+
+6、显示环境配置
+在根目录先创建一个environment.xml文件，将需要显示的内容通过标签显示
+"""
+<environment>
+    <parameter>
+        <key>system</key>
+        <value>windows11</value>
+    </parameter>
+    <parameter>
+        <key>python version</key>
+        <value>python3.12.3</value>
+    </parameter>
+    <parameter>
+        <key>allure version</key>
+        <value>allure 2.34.0</value>
+    </parameter>
+    <parameter>
+        <key>项目名称</key>
+        <value>XXX自动化测试</value>
+    </parameter>
+    <parameter>
+        <key>作者</key>
+        <value>杨正杰</value>
+    </parameter>
+</environment>
+"""
+使用shutil包，将environment.xml复制到报告的临时存储文件中，这样在allure解析report/temp时就会自动解析环境
+"""
+shutil.copy('./environment.xml','./report/temp')
+"""
+
+7、logo更换及测试用例换行展示设置
+    1）测试用例只显示title
+    测试用例换行显示设置，找到左边目录的.venv（带有library的，反正找到allure_pytest的目录就行）目录下的\Lib\site-packages\allure_pytest\listener.py
+    !!!!!注意，只要加上mode='hidden'就行，不要改其他，否则allure不会收集用例
+    !!!!!妈了个逼的，被所谓大佬坑惨了，在出错的情况下，确保所有的配置都不变的情况下再排查错误
+    """
+        test_result.parameters.extend([
+            Parameter(name=name, value=represent(value),mode='hidden')
+            for name, value in params.items()
+            if name not in current_param_names
+        ])
+    """
+
+    2）修改报告logo
+    !!!暂时不看，需要再学
+
+
+
+

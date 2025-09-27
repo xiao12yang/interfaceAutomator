@@ -1,0 +1,30 @@
+- baseInfo:
+    api_name: 用户新增
+    url: /dar/user/addUser
+    method: post
+    headers:
+      ${get_headers(data)}
+  testCases:
+    - case_name: 新增用户正常校验
+      data:
+        username: testadduser
+        password: tset6789890
+        role_id: 123456789
+        dates: ${get_now_time()},
+        phone: 13800000000,
+        token: ${get_extract_data(token)}
+      validation:
+        - code: 200
+        - contain: {'msg':'新增成功'}
+        - db: select * from ecs_users where user_name='xiaoyang'
+    - case_name: 新增用户失败校验
+      data:
+        username: testadduser
+        password: tset6789890
+        role_id: 123456789
+        dates: ${get_now_time()},
+        phone: 13800000000,
+        token: 1234567h
+      validation:
+        - contain: {'msg':'新增失败'}
+#      token: $.token

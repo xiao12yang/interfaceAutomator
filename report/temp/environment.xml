@@ -1,0 +1,22 @@
+<environment>
+    <parameter>
+        <key>system</key>
+        <value>windows11</value>
+    </parameter>
+    <parameter>
+        <key>python version</key>
+        <value>python3.12.3</value>
+    </parameter>
+    <parameter>
+        <key>allure version</key>
+        <value>allure 2.34.0</value>
+    </parameter>
+    <parameter>
+        <key>项目名称</key>
+        <value>电子商城自动化测试</value>
+    </parameter>
+    <parameter>
+        <key>作者</key>
+        <value>杨正杰</value>
+    </parameter>
+</environment>

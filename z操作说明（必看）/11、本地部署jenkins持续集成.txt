@@ -1,0 +1,59 @@
+安装教程：
+!!!jenkins上面很多插件只支持较高版本的jenkins，我安装的是较高版的所以没碰什么错误
+1、jenkins的版本要安装对应的apache-tomcat，而apache-tomcat的版本又需要安装特定版本的jdk，所以先上百度查一下jenkins版本对应要安装的tomcat和jdk的版本
+"""
+jenkins安装包下载路径：https://mirrors.jenkins.io/war/
+apache-tomcat安装包下载路径：https://tomcat.apache.org/download-10.cgi
+jdk安装包下载路径：https://www.oracle.com/java/technologies/downloads/
+"""
+2、apache-tomcat和jenkins部署
+    1）解压apache-tomcat压缩包，复制到想要存放的目录
+    2）找到??\apache-tomcat-10.1.46\conf\logging.properties，打开后找到下面代码，将UTF8改成GBK，这样终端就不会出现乱码
+        """
+        java.util.logging.ConsoleHandler.level = ALL
+        java.util.logging.ConsoleHandler.formatter = org.apache.juli.OneLineFormatter
+        java.util.logging.ConsoleHandler.encoding = GBK
+        """
+    3）将下载好的jenkins.war包复制到??\apache-tomcat-10.1.46\webapps中，如果是初始配置，就先把文件夹中的所有文件都删除，这些文件没啥用
+    4）部署并运行，直接运行??\apache-tomcat-10.1.46\bin\startup.bat或打开终端在执行startup.bat
+    5）访问jenkins：http://localhost:8080
+    6）安装插件，如果可以的化直接就把推荐安装的都安装了，免得后面发生不必要的错误，如果安装失败，先重试实在不行再检查版本
+    7）创建项目
+        · 新建Item，选择自由风格（freestyle）
+        · 添加描述
+        · 在配置中，源码管理勾选Git，将github上的脚本放到Repository URL中，添加Credentials，输入本机jenkins的用户名和密码
+        · 配置Triggers，勾选Build Periodically，输入：* * * * *
+            """
+            * * * * * 的规则
+            第一个*表示分钟，取值0~59
+            第二个*表示小时，取值0~23
+            第三个*表示一个月的第几天，取值1~31
+            第四个*表示第几月，取值1~12
+            第五个*表示一周中的第几天，取值0~7，其中0和7代表都是周日
+            """
+            """
+            举例：
+            每隔5分钟构建一次
+            H/5 * * * *
+            每隔两小时构建一次
+            H H/2 * * *
+            每隔8小时构建一次
+            H H/8 * * *
+            每天下午12点定时构建一次
+            H 12 * * *
+            每天下午18点定时构建一次
+            H 18 * * *
+            在每个小时的前半小时内每个10分钟构建一次
+            H(0-29)/10 * * * *
+            每两小时45分钟，从上午9:45开始，每天下午15:45结束
+            45 9-16/2 * * 1-5
+            """
+        · 配置Environment，勾选Delete workspace before build starts和Add timestamps to the Console Output
+            前一个是构建后删除工作目录
+            后一个是输出测试过程到控制台
+            如果没有就查百度，安装对应插件
+        · 配置Build Steps
+            如果部署在windows就选Execute Windows batch command
+            如果部署在linux就选Execute shell
+            然后添加命令执行主函数：python run.py
+        ·
