@@ -21,11 +21,6 @@ def read_yaml(yaml_path):
                     testCases_list.append([base_info,ts])
                 return testCases_list
             else:
-                print(data)
-                # for bs in data:
-                #     base_info = bs.get('baseInfo')
-                #     for ts in base_info.get('testCases'):
-                #         testCases_list.append()
                 return data
     except UnicodeDecodeError as e:
         logs.error(f'{yaml_path}文件编码格式错误，--尝试使用utf-8去解码YAML文件发生错误，请确保你的yaml文件是utf-8格式!')
@@ -93,8 +88,8 @@ def get_extract_yaml(node_name,sub_node_name=None):
 
 
 if __name__ == '__main__':
-    res = read_yaml('../../data/productScenario.yaml')
+    res = read_yaml('../../data/createOrderScenario.yaml')
     print(type(res))
+    print(res)
     for item in res:
         print(item)
-    print(len(res))

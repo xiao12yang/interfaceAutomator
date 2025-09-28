@@ -26,3 +26,197 @@ ERROR - 2025-09-28 02:22:28,668 - apiutils_single.py:146 - [apiutils_single:exec
            ^^^^^^^^^^^^^
 AssertionError: 测试失败
 
+ERROR - 2025-09-28 09:48:46,174 - sendrequests.py:38 - [sendrequests:send_request] - 接口连接异常，可能是request的链接数过多或者速度过快导致程序报错
+ERROR - 2025-09-28 09:48:46,181 - apiutils_business.py:138 - [apiutils_business:execute_test_case] - 出现未知异常 -- Traceback (most recent call last):
+  File "C:\dol\python\interfaceAutomator\unit_tools\apiutils_business.py", line 119, in execute_test_case
+    allure.attach(self.allure_attach_dict_response(response.json()), "接口实际返回信息",
+                                                   ^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'json'
+
+ERROR - 2025-09-28 09:48:46,273 - yaml_handler.py:91 - [yaml_handler:get_extract_yaml] - 未知异常，原因：'NoneType' object is not subscriptable
+ERROR - 2025-09-28 09:48:46,274 - apiutils_business.py:138 - [apiutils_business:execute_test_case] - 出现未知异常 -- Traceback (most recent call last):
+  File "C:\dol\python\interfaceAutomator\unit_tools\apiutils_business.py", line 108, in execute_test_case
+    testcase[param_type] = self.parses_replace_variables(param_value)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dol\python\interfaceAutomator\unit_tools\apiutils_business.py", line 44, in parses_replace_variables
+    extract_data = getattr(DebugTalk(), func_name)(*func_params)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dol\python\interfaceAutomator\unit_tools\debugtalk.py", line 20, in get_extract_data
+    out_format: self.seq_read(data,out_format),
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dol\python\interfaceAutomator\unit_tools\debugtalk.py", line 35, in seq_read
+    return data[randoms - 1]
+           ~~~~^^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+
+ERROR - 2025-09-28 09:48:46,292 - yaml_handler.py:91 - [yaml_handler:get_extract_yaml] - 未知异常，原因：'NoneType' object is not subscriptable
+ERROR - 2025-09-28 09:48:46,292 - apiutils_business.py:138 - [apiutils_business:execute_test_case] - 出现未知异常 -- Traceback (most recent call last):
+  File "C:\dol\python\interfaceAutomator\unit_tools\apiutils_business.py", line 108, in execute_test_case
+    testcase[param_type] = self.parses_replace_variables(param_value)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dol\python\interfaceAutomator\unit_tools\apiutils_business.py", line 44, in parses_replace_variables
+    extract_data = getattr(DebugTalk(), func_name)(*func_params)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dol\python\interfaceAutomator\unit_tools\debugtalk.py", line 20, in get_extract_data
+    out_format: self.seq_read(data,out_format),
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dol\python\interfaceAutomator\unit_tools\debugtalk.py", line 35, in seq_read
+    return data[randoms - 1]
+           ~~~~^^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+
+ERROR - 2025-09-28 09:48:46,310 - yaml_handler.py:91 - [yaml_handler:get_extract_yaml] - 未知异常，原因：'NoneType' object is not subscriptable
+ERROR - 2025-09-28 09:48:46,310 - yaml_handler.py:91 - [yaml_handler:get_extract_yaml] - 未知异常，原因：'NoneType' object is not subscriptable
+ERROR - 2025-09-28 09:48:46,310 - yaml_handler.py:91 - [yaml_handler:get_extract_yaml] - 未知异常，原因：'NoneType' object is not subscriptable
+ERROR - 2025-09-28 09:48:46,311 - yaml_handler.py:91 - [yaml_handler:get_extract_yaml] - 未知异常，原因：'NoneType' object is not subscriptable
+ERROR - 2025-09-28 09:48:48,329 - sendrequests.py:38 - [sendrequests:send_request] - 接口连接异常，可能是request的链接数过多或者速度过快导致程序报错
+ERROR - 2025-09-28 09:48:48,331 - apiutils_business.py:138 - [apiutils_business:execute_test_case] - 出现未知异常 -- Traceback (most recent call last):
+  File "C:\dol\python\interfaceAutomator\unit_tools\apiutils_business.py", line 119, in execute_test_case
+    allure.attach(self.allure_attach_dict_response(response.json()), "接口实际返回信息",
+                                                   ^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'json'
+
+ERROR - 2025-09-28 09:48:48,351 - yaml_handler.py:91 - [yaml_handler:get_extract_yaml] - 未知异常，原因：'NoneType' object is not subscriptable
+ERROR - 2025-09-28 09:48:48,352 - yaml_handler.py:91 - [yaml_handler:get_extract_yaml] - 未知异常，原因：'NoneType' object is not subscriptable
+ERROR - 2025-09-28 09:48:50,386 - sendrequests.py:38 - [sendrequests:send_request] - 接口连接异常，可能是request的链接数过多或者速度过快导致程序报错
+ERROR - 2025-09-28 09:48:50,389 - apiutils_business.py:138 - [apiutils_business:execute_test_case] - 出现未知异常 -- Traceback (most recent call last):
+  File "C:\dol\python\interfaceAutomator\unit_tools\apiutils_business.py", line 119, in execute_test_case
+    allure.attach(self.allure_attach_dict_response(response.json()), "接口实际返回信息",
+                                                   ^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'json'
+
+ERROR - 2025-09-28 09:48:50,414 - yaml_handler.py:91 - [yaml_handler:get_extract_yaml] - 未知异常，原因：'NoneType' object is not subscriptable
+ERROR - 2025-09-28 09:48:50,414 - yaml_handler.py:91 - [yaml_handler:get_extract_yaml] - 未知异常，原因：'NoneType' object is not subscriptable
+ERROR - 2025-09-28 09:48:52,447 - sendrequests.py:38 - [sendrequests:send_request] - 接口连接异常，可能是request的链接数过多或者速度过快导致程序报错
+ERROR - 2025-09-28 09:48:52,448 - apiutils_single.py:146 - [apiutils_single:execute_test_case] - 出现未知异常 -- Traceback (most recent call last):
+  File "C:\dol\python\interfaceAutomator\unit_tools\apiutils_single.py", line 127, in execute_test_case
+    allure.attach(self.allure_attach_dict_response(response.json()), "接口实际返回信息",
+                                                   ^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'json'
+
+ERROR - 2025-09-28 09:48:54,506 - sendrequests.py:38 - [sendrequests:send_request] - 接口连接异常，可能是request的链接数过多或者速度过快导致程序报错
+ERROR - 2025-09-28 09:48:54,508 - apiutils_single.py:146 - [apiutils_single:execute_test_case] - 出现未知异常 -- Traceback (most recent call last):
+  File "C:\dol\python\interfaceAutomator\unit_tools\apiutils_single.py", line 127, in execute_test_case
+    allure.attach(self.allure_attach_dict_response(response.json()), "接口实际返回信息",
+                                                   ^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'json'
+
+ERROR - 2025-09-28 09:48:54,527 - yaml_handler.py:91 - [yaml_handler:get_extract_yaml] - 未知异常，原因：'NoneType' object is not subscriptable
+ERROR - 2025-09-28 09:48:54,527 - yaml_handler.py:91 - [yaml_handler:get_extract_yaml] - 未知异常，原因：'NoneType' object is not subscriptable
+ERROR - 2025-09-28 09:48:56,553 - sendrequests.py:38 - [sendrequests:send_request] - 接口连接异常，可能是request的链接数过多或者速度过快导致程序报错
+ERROR - 2025-09-28 09:48:56,554 - apiutils_single.py:146 - [apiutils_single:execute_test_case] - 出现未知异常 -- Traceback (most recent call last):
+  File "C:\dol\python\interfaceAutomator\unit_tools\apiutils_single.py", line 127, in execute_test_case
+    allure.attach(self.allure_attach_dict_response(response.json()), "接口实际返回信息",
+                                                   ^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'json'
+
+ERROR - 2025-09-28 09:48:58,624 - sendrequests.py:38 - [sendrequests:send_request] - 接口连接异常，可能是request的链接数过多或者速度过快导致程序报错
+ERROR - 2025-09-28 09:48:58,626 - apiutils_single.py:146 - [apiutils_single:execute_test_case] - 出现未知异常 -- Traceback (most recent call last):
+  File "C:\dol\python\interfaceAutomator\unit_tools\apiutils_single.py", line 127, in execute_test_case
+    allure.attach(self.allure_attach_dict_response(response.json()), "接口实际返回信息",
+                                                   ^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'json'
+
+ERROR - 2025-09-28 09:48:58,646 - yaml_handler.py:91 - [yaml_handler:get_extract_yaml] - 未知异常，原因：'NoneType' object is not subscriptable
+ERROR - 2025-09-28 09:48:58,647 - apiutils_single.py:146 - [apiutils_single:execute_test_case] - 出现未知异常 -- Traceback (most recent call last):
+  File "C:\dol\python\interfaceAutomator\unit_tools\apiutils_single.py", line 114, in execute_test_case
+    test_case_s[param_type] = self.parses_replace_variables(param_value)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dol\python\interfaceAutomator\unit_tools\apiutils_single.py", line 47, in parses_replace_variables
+    extract_data = getattr(DebugTalk(), func_name)(*func_params)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dol\python\interfaceAutomator\unit_tools\debugtalk.py", line 21, in get_extract_data
+    0:random.choice(data),
+      ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zheng\AppData\Local\Programs\Python\Python312\Lib\random.py", line 346, in choice
+    if not len(seq):
+           ^^^^^^^^
+TypeError: object of type 'NoneType' has no len()
+
+ERROR - 2025-09-28 09:48:58,670 - yaml_handler.py:91 - [yaml_handler:get_extract_yaml] - 未知异常，原因：'NoneType' object is not subscriptable
+ERROR - 2025-09-28 09:48:58,670 - yaml_handler.py:91 - [yaml_handler:get_extract_yaml] - 未知异常，原因：'NoneType' object is not subscriptable
+ERROR - 2025-09-28 09:49:00,706 - sendrequests.py:38 - [sendrequests:send_request] - 接口连接异常，可能是request的链接数过多或者速度过快导致程序报错
+ERROR - 2025-09-28 09:49:00,707 - apiutils_single.py:146 - [apiutils_single:execute_test_case] - 出现未知异常 -- Traceback (most recent call last):
+  File "C:\dol\python\interfaceAutomator\unit_tools\apiutils_single.py", line 127, in execute_test_case
+    allure.attach(self.allure_attach_dict_response(response.json()), "接口实际返回信息",
+                                                   ^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'json'
+
+ERROR - 2025-09-28 09:49:02,746 - sendrequests.py:38 - [sendrequests:send_request] - 接口连接异常，可能是request的链接数过多或者速度过快导致程序报错
+ERROR - 2025-09-28 09:49:02,746 - apiutils_single.py:146 - [apiutils_single:execute_test_case] - 出现未知异常 -- Traceback (most recent call last):
+  File "C:\dol\python\interfaceAutomator\unit_tools\apiutils_single.py", line 127, in execute_test_case
+    allure.attach(self.allure_attach_dict_response(response.json()), "接口实际返回信息",
+                                                   ^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'json'
+
+ERROR - 2025-09-28 09:50:01,166 - yaml_handler.py:91 - [yaml_handler:get_extract_yaml] - 未知异常，原因：'cookies'
+ERROR - 2025-09-28 09:50:01,166 - yaml_handler.py:91 - [yaml_handler:get_extract_yaml] - 未知异常，原因：'cookies'
+ERROR - 2025-09-28 09:50:01,173 - assertion_utils.py:92 - [assertion_utils:equal_assert] - 相等模式断言失败，预期结果【message:操作成功】不存在于实际结果中，请检查预期结果或接口返回值是否正确
+ERROR - 2025-09-28 09:50:01,174 - assertion_utils.py:194 - [assertion_utils:assert_result] - 测试失败
+ERROR - 2025-09-28 09:50:01,175 - apiutils_single.py:146 - [apiutils_single:execute_test_case] - 出现未知异常 -- Traceback (most recent call last):
+  File "C:\dol\python\interfaceAutomator\unit_tools\apiutils_single.py", line 144, in execute_test_case
+    self.asserts.assert_result(validation,response.json(),status_code)
+  File "C:\dol\python\interfaceAutomator\unit_tools\assertion_utils.py", line 195, in assert_result
+    raise e
+  File "C:\dol\python\interfaceAutomator\unit_tools\assertion_utils.py", line 191, in assert_result
+    assert all_flag == 0, '测试失败'
+           ^^^^^^^^^^^^^
+AssertionError: 测试失败
+
+ERROR - 2025-09-28 09:50:01,372 - connectMysql.py:31 - [connectMysql:__init__] - 连接数据库失败，原因：(1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+ERROR - 2025-09-28 09:50:01,372 - connectMysql.py:48 - [connectMysql:query] - 查询数据库内容出现异常，原因：'ConnectMysql' object has no attribute 'cursor'
+ERROR - 2025-09-28 09:50:01,373 - assertion_utils.py:154 - [assertion_utils:database_assert] - 数据库断言失败，请检查数据库是否存在该数据
+ERROR - 2025-09-28 09:50:01,373 - assertion_utils.py:194 - [assertion_utils:assert_result] - 测试失败
+ERROR - 2025-09-28 09:50:01,373 - apiutils_single.py:146 - [apiutils_single:execute_test_case] - 出现未知异常 -- Traceback (most recent call last):
+  File "C:\dol\python\interfaceAutomator\unit_tools\apiutils_single.py", line 144, in execute_test_case
+    self.asserts.assert_result(validation,response.json(),status_code)
+  File "C:\dol\python\interfaceAutomator\unit_tools\assertion_utils.py", line 195, in assert_result
+    raise e
+  File "C:\dol\python\interfaceAutomator\unit_tools\assertion_utils.py", line 191, in assert_result
+    assert all_flag == 0, '测试失败'
+           ^^^^^^^^^^^^^
+AssertionError: 测试失败
+
+ERROR - 2025-09-28 10:01:29,249 - yaml_handler.py:91 - [yaml_handler:get_extract_yaml] - 未知异常，原因：'NoneType' object is not subscriptable
+ERROR - 2025-09-28 10:01:29,251 - yaml_handler.py:91 - [yaml_handler:get_extract_yaml] - 未知异常，原因：'NoneType' object is not subscriptable
+ERROR - 2025-09-28 10:01:29,260 - assertion_utils.py:92 - [assertion_utils:equal_assert] - 相等模式断言失败，预期结果【message:操作成功】不存在于实际结果中，请检查预期结果或接口返回值是否正确
+ERROR - 2025-09-28 10:01:29,262 - assertion_utils.py:194 - [assertion_utils:assert_result] - 测试失败
+ERROR - 2025-09-28 10:01:29,262 - apiutils_single.py:146 - [apiutils_single:execute_test_case] - 出现未知异常 -- Traceback (most recent call last):
+  File "C:\dol\python\interfaceAutomator\unit_tools\apiutils_single.py", line 144, in execute_test_case
+    self.asserts.assert_result(validation,response.json(),status_code)
+  File "C:\dol\python\interfaceAutomator\unit_tools\assertion_utils.py", line 195, in assert_result
+    raise e
+  File "C:\dol\python\interfaceAutomator\unit_tools\assertion_utils.py", line 191, in assert_result
+    assert all_flag == 0, '测试失败'
+           ^^^^^^^^^^^^^
+AssertionError: 测试失败
+
+ERROR - 2025-09-28 10:03:53,461 - yaml_handler.py:91 - [yaml_handler:get_extract_yaml] - 未知异常，原因：'NoneType' object is not subscriptable
+ERROR - 2025-09-28 10:03:53,462 - yaml_handler.py:91 - [yaml_handler:get_extract_yaml] - 未知异常，原因：'NoneType' object is not subscriptable
+ERROR - 2025-09-28 10:03:53,472 - assertion_utils.py:92 - [assertion_utils:equal_assert] - 相等模式断言失败，预期结果【message:操作成功】不存在于实际结果中，请检查预期结果或接口返回值是否正确
+ERROR - 2025-09-28 10:03:53,473 - assertion_utils.py:194 - [assertion_utils:assert_result] - 测试失败
+ERROR - 2025-09-28 10:03:53,474 - apiutils_single.py:146 - [apiutils_single:execute_test_case] - 出现未知异常 -- Traceback (most recent call last):
+  File "C:\dol\python\interfaceAutomator\unit_tools\apiutils_single.py", line 144, in execute_test_case
+    self.asserts.assert_result(validation,response.json(),status_code)
+  File "C:\dol\python\interfaceAutomator\unit_tools\assertion_utils.py", line 195, in assert_result
+    raise e
+  File "C:\dol\python\interfaceAutomator\unit_tools\assertion_utils.py", line 191, in assert_result
+    assert all_flag == 0, '测试失败'
+           ^^^^^^^^^^^^^
+AssertionError: 测试失败
+
+ERROR - 2025-09-28 10:15:56,394 - yaml_handler.py:33 - [yaml_handler:read_yaml] - 读取./data/create_order_scenario.yaml文件时出现异常，原因：[Errno 2] No such file or directory: './data/create_order_scenario.yaml'
+ERROR - 2025-09-28 10:35:17,796 - connectMysql.py:31 - [connectMysql:__init__] - 连接数据库失败，原因：(1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+ERROR - 2025-09-28 10:35:17,798 - connectMysql.py:48 - [connectMysql:query] - 查询数据库内容出现异常，原因：'ConnectMysql' object has no attribute 'cursor'
+ERROR - 2025-09-28 10:35:17,798 - assertion_utils.py:154 - [assertion_utils:database_assert] - 数据库断言失败，请检查数据库是否存在该数据
+ERROR - 2025-09-28 10:35:17,799 - assertion_utils.py:194 - [assertion_utils:assert_result] - 测试失败
+ERROR - 2025-09-28 10:35:17,800 - apiutils_single.py:146 - [apiutils_single:execute_test_case] - 出现未知异常 -- Traceback (most recent call last):
+  File "C:\dol\python\interfaceAutomator\unit_tools\apiutils_single.py", line 144, in execute_test_case
+    self.asserts.assert_result(validation,response.json(),status_code)
+  File "C:\dol\python\interfaceAutomator\unit_tools\assertion_utils.py", line 195, in assert_result
+    raise e
+  File "C:\dol\python\interfaceAutomator\unit_tools\assertion_utils.py", line 191, in assert_result
+    assert all_flag == 0, '测试失败'
+           ^^^^^^^^^^^^^
+AssertionError: 测试失败
+

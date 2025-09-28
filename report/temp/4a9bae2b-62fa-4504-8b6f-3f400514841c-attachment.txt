@@ -1,9 +1,0 @@
-参数类型：data
-{
-    "username": "testadduser",
-    "password": "tset6789890",
-    "role_id": 123456789,
-    "dates": "2025-09-28,",
-    "phone": "13800000000,",
-    "token": "f0F40Afc5efdDc54320aCEFEAcACA"
-}
