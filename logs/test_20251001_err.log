@@ -1,0 +1,90 @@
+ERROR - 2025-10-01 03:15:51,828 - yaml_handler.py:86 - [yaml_handler:get_extract_yaml] - 未知异常，原因：'NoneType' object is not subscriptable
+ERROR - 2025-10-01 03:15:51,828 - yaml_handler.py:86 - [yaml_handler:get_extract_yaml] - 未知异常，原因：'NoneType' object is not subscriptable
+ERROR - 2025-10-01 03:15:51,828 - yaml_handler.py:86 - [yaml_handler:get_extract_yaml] - 未知异常，原因：'NoneType' object is not subscriptable
+ERROR - 2025-10-01 03:15:51,828 - yaml_handler.py:86 - [yaml_handler:get_extract_yaml] - 未知异常，原因：'NoneType' object is not subscriptable
+ERROR - 2025-10-01 03:15:51,829 - yaml_handler.py:86 - [yaml_handler:get_extract_yaml] - 未知异常，原因：'NoneType' object is not subscriptable
+ERROR - 2025-10-01 03:15:51,829 - yaml_handler.py:86 - [yaml_handler:get_extract_yaml] - 未知异常，原因：'NoneType' object is not subscriptable
+ERROR - 2025-10-01 03:15:51,830 - yaml_handler.py:86 - [yaml_handler:get_extract_yaml] - 未知异常，原因：'NoneType' object is not subscriptable
+ERROR - 2025-10-01 03:15:51,832 - apiutils_business.py:138 - [apiutils_business:execute_test_case] - 出现未知异常 -- Traceback (most recent call last):
+  File "C:\dol\python\interfaceAutomator\unit_tools\apiutils_business.py", line 108, in execute_test_case
+    testcase[param_type] = self.parses_replace_variables(param_value)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dol\python\interfaceAutomator\unit_tools\apiutils_business.py", line 44, in parses_replace_variables
+    extract_data = getattr(DebugTalk(), func_name)(*func_params)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dol\python\interfaceAutomator\unit_tools\debugtalk.py", line 20, in get_extract_data
+    out_format: self.seq_read(data,out_format),
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dol\python\interfaceAutomator\unit_tools\debugtalk.py", line 35, in seq_read
+    return data[randoms - 1]
+           ~~~~^^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+
+ERROR - 2025-10-01 03:15:51,839 - assertion_utils.py:92 - [assertion_utils:equal_assert] - 相等模式断言失败，预期结果【message:操作成功】不存在于实际结果中，请检查预期结果或接口返回值是否正确
+ERROR - 2025-10-01 03:15:51,839 - assertion_utils.py:92 - [assertion_utils:equal_assert] - 相等模式断言失败，预期结果【translate_language:zh-CN】不存在于实际结果中，请检查预期结果或接口返回值是否正确
+ERROR - 2025-10-01 03:15:51,840 - assertion_utils.py:194 - [assertion_utils:assert_result] - 测试失败
+ERROR - 2025-10-01 03:15:51,840 - assertion_utils.py:92 - [assertion_utils:equal_assert] - 相等模式断言失败，预期结果【status:0】不存在于实际结果中，请检查预期结果或接口返回值是否正确
+ERROR - 2025-10-01 03:15:51,840 - assertion_utils.py:92 - [assertion_utils:equal_assert] - 相等模式断言失败，预期结果【message:操作成功】不存在于实际结果中，请检查预期结果或接口返回值是否正确
+ERROR - 2025-10-01 03:15:51,841 - assertion_utils.py:194 - [assertion_utils:assert_result] - 测试失败
+ERROR - 2025-10-01 03:15:51,842 - apiutils_business.py:138 - [apiutils_business:execute_test_case] - 出现未知异常 -- Traceback (most recent call last):
+  File "C:\dol\python\interfaceAutomator\unit_tools\apiutils_business.py", line 136, in execute_test_case
+    self.asserts.assert_result(validation,response.json(),status_code)
+  File "C:\dol\python\interfaceAutomator\unit_tools\assertion_utils.py", line 195, in assert_result
+    raise e
+  File "C:\dol\python\interfaceAutomator\unit_tools\assertion_utils.py", line 191, in assert_result
+    assert all_flag == 0, '测试失败'
+           ^^^^^^^^^^^^^
+AssertionError: 测试失败
+
+ERROR - 2025-10-01 03:15:51,842 - assertion_utils.py:194 - [assertion_utils:assert_result] - 测试失败
+ERROR - 2025-10-01 03:15:51,842 - apiutils_single.py:146 - [apiutils_single:execute_test_case] - 出现未知异常 -- Traceback (most recent call last):
+  File "C:\dol\python\interfaceAutomator\unit_tools\apiutils_single.py", line 144, in execute_test_case
+    self.asserts.assert_result(validation,response.json(),status_code)
+  File "C:\dol\python\interfaceAutomator\unit_tools\assertion_utils.py", line 195, in assert_result
+    raise e
+  File "C:\dol\python\interfaceAutomator\unit_tools\assertion_utils.py", line 191, in assert_result
+    assert all_flag == 0, '测试失败'
+           ^^^^^^^^^^^^^
+AssertionError: 测试失败
+
+ERROR - 2025-10-01 03:15:51,844 - apiutils_business.py:138 - [apiutils_business:execute_test_case] - 出现未知异常 -- Traceback (most recent call last):
+  File "C:\dol\python\interfaceAutomator\unit_tools\apiutils_business.py", line 136, in execute_test_case
+    self.asserts.assert_result(validation,response.json(),status_code)
+  File "C:\dol\python\interfaceAutomator\unit_tools\assertion_utils.py", line 195, in assert_result
+    raise e
+  File "C:\dol\python\interfaceAutomator\unit_tools\assertion_utils.py", line 191, in assert_result
+    assert all_flag == 0, '测试失败'
+           ^^^^^^^^^^^^^
+AssertionError: 测试失败
+
+ERROR - 2025-10-01 03:15:51,893 - yaml_handler.py:86 - [yaml_handler:get_extract_yaml] - 未知异常，原因：'token'
+ERROR - 2025-10-01 03:15:51,894 - yaml_handler.py:86 - [yaml_handler:get_extract_yaml] - 未知异常，原因：'token'
+ERROR - 2025-10-01 03:15:51,902 - assertion_utils.py:61 - [assertion_utils:contain_assert] - 包含模式断言失败：预期结果【新增成功】不存在于实际结果【新增失败，参数缺失或token失效】中
+ERROR - 2025-10-01 03:15:51,909 - assertion_utils.py:194 - [assertion_utils:assert_result] - 测试失败
+ERROR - 2025-10-01 03:15:51,910 - apiutils_single.py:146 - [apiutils_single:execute_test_case] - 出现未知异常 -- Traceback (most recent call last):
+  File "C:\dol\python\interfaceAutomator\unit_tools\apiutils_single.py", line 144, in execute_test_case
+    self.asserts.assert_result(validation,response.json(),status_code)
+  File "C:\dol\python\interfaceAutomator\unit_tools\assertion_utils.py", line 195, in assert_result
+    raise e
+  File "C:\dol\python\interfaceAutomator\unit_tools\assertion_utils.py", line 191, in assert_result
+    assert all_flag == 0, '测试失败'
+           ^^^^^^^^^^^^^
+AssertionError: 测试失败
+
+ERROR - 2025-10-01 03:15:51,960 - yaml_handler.py:86 - [yaml_handler:get_extract_yaml] - 未知异常，原因：'orderNumber'
+ERROR - 2025-10-01 03:15:51,961 - yaml_handler.py:86 - [yaml_handler:get_extract_yaml] - 未知异常，原因：'orderNumber'
+ERROR - 2025-10-01 03:15:51,962 - yaml_handler.py:86 - [yaml_handler:get_extract_yaml] - 未知异常，原因：'userId'
+ERROR - 2025-10-01 03:15:51,962 - yaml_handler.py:86 - [yaml_handler:get_extract_yaml] - 未知异常，原因：'userId'
+ERROR - 2025-10-01 03:15:51,973 - assertion_utils.py:98 - [assertion_utils:equal_assert] - 相等模式断言失败，预期结果【error_code:0000】 != 实际结果【error_code:4000】
+ERROR - 2025-10-01 03:15:51,974 - assertion_utils.py:92 - [assertion_utils:equal_assert] - 相等模式断言失败，预期结果【message:订单支付成功】不存在于实际结果中，请检查预期结果或接口返回值是否正确
+ERROR - 2025-10-01 03:15:51,975 - assertion_utils.py:194 - [assertion_utils:assert_result] - 测试失败
+ERROR - 2025-10-01 03:15:51,976 - apiutils_business.py:138 - [apiutils_business:execute_test_case] - 出现未知异常 -- Traceback (most recent call last):
+  File "C:\dol\python\interfaceAutomator\unit_tools\apiutils_business.py", line 136, in execute_test_case
+    self.asserts.assert_result(validation,response.json(),status_code)
+  File "C:\dol\python\interfaceAutomator\unit_tools\assertion_utils.py", line 195, in assert_result
+    raise e
+  File "C:\dol\python\interfaceAutomator\unit_tools\assertion_utils.py", line 191, in assert_result
+    assert all_flag == 0, '测试失败'
+           ^^^^^^^^^^^^^
+AssertionError: 测试失败
+
